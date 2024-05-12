@@ -1,14 +1,18 @@
 const menuBtn = document.getElementById('menuBtn')
 const navLinks = document.getElementById('navLinks')
 const menuBtnIcon = menuBtn.querySelector('i')
+const portfolioGrid = document.querySelector('.portfolio_grid')
 
-window.sr = new ScrollReveal();
-
+const scrollRevealOption = {
+  discance: '50px',
+  origin: 'bottom',
+  duration: 1000,
+}
 
 //* Menu Toggle
 menuBtn.addEventListener('click', (e) => {
   navLinks.classList.toggle('open')
-  
+
   const isOpen = navLinks.classList.contains('open')
   menuBtnIcon.setAttribute('class', isOpen ? 'ri-close-line' : 'ri-menu-line')
 
@@ -18,7 +22,7 @@ menuBtn.addEventListener('click', (e) => {
   })
 })
 
-//* Display Nav 
+//* Display Nav
 const navArray = [
   {
     id: 'n1',
@@ -50,33 +54,62 @@ const navArray = [
   },
 ]
 
-function displayNavBar(nav){
+function displayNavBar(nav) {
   let navArrayItems = nav
-  .map(function(item){
-    return`
+    .map(function (item) {
+      return `
     <li id='${item.id}'>${item.a}</li>
     `
-  }).join('')
+    })
+    .join('')
   navLinks.innerHTML = navArrayItems
 }
 displayNavBar(navArray)
 
-//* ScrollReveal 
-const scrollRevealOption = {
-  discance: '50px',
-  origin: 'bottom',
-  duration: 1000,
+//* Display Portfolio
+const portfolioArray = [
+  {
+    id: 'p1',
+    img: 'assets/portfolio-1.jpg',
+    alt: 'portfolio-1',
+  },
+  {
+    id: 'p2',
+    img: 'assets/portfolio-2.jpg',
+    alt: 'portfolio-2',
+  },
+  {
+    id: 'p3',
+    img: 'assets/portfolio-3.jpg',
+    alt: 'portfolio-3',
+  },
+]
+function displayPortfolio(portfolio) {
+  let portfolioArrayItems = portfolio.map(function (i) {
+    return `
+    <div id='${i.id}' class="portfolio_card">
+    <img src="${i.img}" alt="${i.alt}">
+    <div class="portfolio_content">
+      <button>view portfolio</button>
+    </div>
+  </div>
+    `
+  }).join('')
+  portfolioGrid.innerHTML = portfolioArrayItems
 }
+displayPortfolio(portfolioArray)
 
-sr.reveal('#about h2', {
+//* ScrollReveal
+
+ScrollReveal().reveal('#about h2', {
   ...scrollRevealOption,
 })
-sr.reveal('#about p',{
+ScrollReveal().reveal('#about p', {
   ...scrollRevealOption,
-  delay:300,
-  interval: 300
+  delay: 300,
+  interval: 300,
 })
-sr.reveal('#about img',{
+ScrollReveal().reveal('#about img', {
   ...scrollRevealOption,
-  delay:1000
+  delay: 1000,
 })

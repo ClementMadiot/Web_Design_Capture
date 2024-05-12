@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --text-dark: #171717;
-  --text-light: #525252;
-  --extra-light: #a3a3a3;
-  --white: #ffffff;
+  --text-dark: rgb(23, 23, 23);
+  --text-light: rgb(82, 82, 82);
+  --extra-light: rgb(163, 163, 163);
+  --white: rgb(255, 255, 255);
+  --shadow-cl: rgba(0, 0, 0, 0.5);
   --max-width: 1200px;
   --header-font: 'Merriweather', serif;
 }
@@ -43,13 +44,13 @@ ul,
 li {
   list-style: none;
 }
-a{
+a {
   text-decoration: none;
   font-weight: 500;
   transition: 0.3s;
   color: var(--white);
 }
-p{
+p {
   color: var(--text-light);
   line-height: 1.75rem;
   text-align: center;
@@ -59,12 +60,12 @@ img {
   display: flex;
   width: 100%;
 }
-.section_container {
+section {
   max-width: var(--max-width);
   margin: auto;
   padding: 5rem 1rem;
 }
-.btn {
+button {
   padding: 0.75rem 1.5rem;
   outline: none;
   border: none;
@@ -73,10 +74,11 @@ img {
   color: var(--white);
   background-color: var(--text-dark);
   border-radius: 5px;
+  text-transform: uppercase;
   transition: 0.3s;
   cursor: pointer;
 }
-.btn:hover {
+button:hover {
   background-color: var(--text-light);
 }
 /**** Header ****/
@@ -107,7 +109,7 @@ nav {
   gap: 1rem;
   background-color: var(--text-dark);
 }
-.nav_logo img{
+.nav_logo img {
   max-width: 70px;
 }
 .nav_menu_btn {
@@ -129,69 +131,125 @@ nav {
   z-index: -1;
 }
 
-.nav_links.open{
+.nav_links.open {
   transform: translateY(0);
 }
-.nav_links #n4{
-display: none;
+.nav_links #n4 {
+  display: none;
 }
-.nav_links a{
+.nav_links a {
   padding-bottom: 5px;
   border-bottom: 2px solid transparent;
 }
-.nav_links a:hover{
+.nav_links a:hover {
   border-color: var(--white);
 }
 /**** About ****/
-#about p{
+#about p {
   max-width: 900px;
   margin-inline: auto;
   margin-bottom: 2rem;
 }
-#about img{
+#about img {
   max-width: 170px;
   margin-inline: auto;
 }
-
-
-/**** Responsive ****/
-/*: Ipad */
-@media (width > 768px) {
-header{
-  min-height: 650px;
+/**** Portfolio ****/
+.portfolio_grid {
+  display: grid;
+  margin-top: 2rem;
+  gap: 1rem;
 }
-nav{
-  padding: 2rem 1rem;
-  position:static;
-  max-width: 900px;
+.portfolio_card {
+  position: relative;
+  isolation: isolate;
+}
+.portfolio_card::after {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  font-family: var(--header-font);
+  color: var(--white);
+}
+.portfolio_card:nth-child(1)::after {
+  content: 'Portraits';
+}
+.portfolio_card:nth-child(2)::after {
+  content: 'Weedings';
+}
+.portfolio_card:nth-child(3)::after {
+  content: 'Fashions';
+}
+.portfolio_content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 1;
 }
-.nav_header{
-  display: none;
+.portfolio_card:hover .portfolio_content {
+  opacity: 1 !important;
 }
 
-.nav_links{
-  padding: 0;
-  width: 100%;
-  position: static;
-  transform: unset;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: transparent;
+/**** Responsive ****/
+@media (width > 540px){
+  .portfolio_grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-.nav_links #n4{
-  display: block;
-}
-.nav_links #n4{
-  max-width: 150px;
+/*: Ipad */
+@media (width > 768px) {
+  header {
+    min-height: 650px;
+  }
+/**** NavBar ****/
+  nav {
+    padding: 2rem 1rem;
+    position: static;
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav_header {
+    display: none;
+  }
+
+  .nav_links {
+    padding: 0;
+    width: 100%;
+    position: static;
+    transform: unset;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: transparent;
+  }
+  .nav_links #n4 {
+    display: block;
+  }
+  .nav_links #n4 {
+    max-width: 150px;
+  }
+/**** Portfolio ****/
+.portfolio_grid{
+  grid-template-columns: repeat(3,1fr);
 }
 }
 /*: Desktop */
-@media (width > 1024px){
-  header{
+@media (width > 1024px) {
+  header {
     min-height: 700px;
   }
+  .portfolio_grid{
+    gap: 2rem;
+  }
 }
-
