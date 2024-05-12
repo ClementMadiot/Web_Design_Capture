@@ -36,7 +36,6 @@ h4 {
 ul,
 li {
   list-style: none;
-  background-color: var(--text-dark);
 }
 a{
   text-decoration: none;
@@ -124,6 +123,7 @@ nav {
   align-items: center;
   flex-direction: column;
   gap: 2rem;
+  background-color: var(--text-dark);
   transform: translateY(-100%);
   transition: 0.3s;
   z-index: -1;
@@ -142,3 +142,44 @@ display: none;
 .nav_links a:hover{
   border-color: var(--white);
 }
+/**** Responsive ****/
+/*: Ipad */
+@media (width > 768px) {
+header{
+  min-height: 650px;
+}
+nav{
+  padding: 2rem 1rem;
+  position:static;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav_header{
+  display: none;
+}
+
+.nav_links{
+  padding: 0;
+  width: 100%;
+  position: static;
+  transform: unset;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: transparent;
+}
+.nav_links .nav_logo{
+  display: block;
+}
+.nav_links .nav_logo img{
+  max-width: 150px;
+}
+}
+/*: Desktop */
+@media (width > 1024px){
+  header{
+    min-height: 700px;
+  }
+}
+
