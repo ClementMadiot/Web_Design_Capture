@@ -4,11 +4,12 @@ const menuBtnIcon = menuBtn.querySelector('i')
 const portfolioGrid = document.querySelector('.portfolio_grid')
 const serviceGrid = document.querySelector('.service_grid')
 const clientWrapper = document.querySelector('.swiper-wrapper')
+const galleryGrid = document.querySelector('.gallery_grid')
 
 const scrollRevealOption = {
   discance: '50px',
   duration: 1000,
-  origin: 'bottom'
+  origin: 'bottom',
 }
 
 //* Menu Toggle
@@ -143,19 +144,19 @@ const clientArray = [
     id: 'c1',
     title: 'Sarah and Micheal',
     desc: "Capturer exceeded all our expectations ! Their attention to detail and ability to capture the essence of our special day was truly remarkable> Every time we look at our wedding photos, we're transported back to those magical moments. Thanks you for preserving our memories so beautifully !",
-    img: "assets/client-1.jpg"
+    img: 'assets/client-1.jpg',
   },
   {
     id: 'c2',
     title: 'The Johsnon Family',
     desc: "We couldn't be happier with our family portrait session with Capturer. They made us feel relaxed and comfortable throughout the entire shoot, resulting in natural and candid photos that perfectly reflect our family dynamic. Thece images will be cherished for years to come !",
-    img: "assets/client-2.jpg"
+    img: 'assets/client-2.jpg',
   },
   {
     id: 'c3',
     title: 'Emily and David',
     desc: "Capturer's maternity and newborn sessions captured the most precious moments of our lives with such tenderness and care. |From the anticipation of pregnancy to the joy of welcoming our little one, every photo tells a story that we'll cherish forever. Thank you for creating beautiful memories for our familiy !",
-    img: "assets/client-3.jpg"
+    img: 'assets/client-3.jpg',
   },
 ]
 
@@ -178,15 +179,64 @@ function displayClient(client) {
 displayClient(clientArray)
 
 const swiper = new Swiper('.swiper', {
-  loop:true,
-  pagination:{
-    el: '.swiper-pagination'
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
   },
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
 })
+//* Display Gallery
+const galleryArray = [
+  {
+    img: 'assets/image-1.jpg',
+    alt: 'gallery-image-1',
+  },
+  {
+    img: 'assets/image-2.jpg',
+    alt: 'gallery-image-2',
+  },
+  {
+    img: 'assets/image-3.jpg',
+    alt: 'gallery-image-3',
+  },
+  {
+    img: 'assets/image-4.jpg',
+    alt: 'gallery-image-4',
+  },
+  {
+    img: 'assets/image-5.jpg',
+    alt: 'gallery-image-5',
+  },
+  {
+    img: 'assets/image-6.jpg',
+    alt: 'gallery-image-6',
+  },
+  {
+    img: 'assets/image-7.jpg',
+    alt: 'gallery-image-7',
+  },
+  {
+    img: 'assets/image-8.jpg',
+    alt: 'gallery-image-8',
+  },
+]
+function displayGallery(gallery) {
+  galleryImages = gallery
+    .map(function (i) {
+      return `
+    <ul>
+    <li><img src="${i.img}" alt="${i.alt}"</li>
+    </ul>
+    
+    `
+    })
+    .join('')
+  galleryGrid.innerHTML = galleryImages
+}
+displayGallery(galleryArray)
 
 //* ScrollReveal
 
@@ -212,7 +262,7 @@ ScrollReveal().reveal('.service_description', {
   delay: 500,
 })
 ScrollReveal().reveal('.service_card', {
-  duration:1000,
+  duration: 1000,
   delay: 1000,
-  interval:500,
+  interval: 500,
 })

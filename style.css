@@ -276,6 +276,7 @@ nav {
   font-weight: 600;
   color: var(--text-dark);
 }
+/*; swiper part  */
 .swiper-pagination {
   position: static !important;
   display: flex;
@@ -291,6 +292,24 @@ nav {
   display: none !important;
 }
 
+/**** Gallery ****/
+.gallery_grid{
+  margin-bottom: 2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2,1fr);
+}
+.gallery_grid img{
+  transition: 0.3s;
+}
+.gallery_grid:hover img:not(:hover){
+  opacity: 0.5;
+}
+.gallery_btn{
+  text-align: center;
+}
+
+
 /**** Responsive ****/
 @media (width > 540px) {
   .portfolio_grid,
@@ -299,6 +318,9 @@ nav {
   }
   .service_grid h4 {
     font-size: 1.5rem;
+  }
+  .gallery_grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 /*: Ipad */
@@ -348,6 +370,10 @@ nav {
   }
   .client_card p{
     padding: 0 3.5rem;
+  }
+  /**** Gallery****/
+  .gallery_grid{
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 /*: Desktop */
