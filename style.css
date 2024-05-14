@@ -32,7 +32,7 @@ h2 {
 }
 h2 {
   margin-bottom: 1rem;
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 400;
   font-family: var(--header-font);
   text-align: center;
@@ -82,15 +82,17 @@ button {
 button:hover {
   background-color: var(--text-light);
 }
+header,#service , #blog{
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 /**** Header ****/
 
 header {
   min-height: 600px;
   background-image: radial-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9)),
     url(assets/header.jpg);
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 /**** NavBar ****/
 nav {
@@ -204,9 +206,6 @@ nav {
 #service {
   background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
     url(assets/service.jpg);
-  background-position: center, center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 #service h2 {
   color: var(--white);
@@ -308,6 +307,39 @@ nav {
 .gallery_btn{
   text-align: center;
 }
+  /**** Blog****/
+#blog {
+  background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+  url(assets/blog.jpg);
+}
+.blog_container{
+  padding-bottom: 8rem;
+  display: grid;
+}
+.blog_content{
+  text-align: center;
+}
+.blog_content h2{
+  margin-bottom: 2rem;
+  color: var(--white);
+}
+.blog_content h4{
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-family: var(--header-font);
+  color: var(--white);
+}
+
+.blog_content p{
+  margin-bottom: 2rem;
+  line-height: 1.75rem;
+  color: var(--extra-light);
+}
+.blog_content button{
+  background-color: transparent;
+  border: 1px solid var(--white);
+}
 
 
 /**** Responsive ****/
@@ -322,13 +354,18 @@ nav {
   .gallery_grid {
     grid-template-columns: repeat(3, 1fr);
   }
+  .service_card:nth-child(3){
+    grid-column: 1/3;
+    max-width: 350px;
+    margin: auto;
+  }
 }
 /*: Ipad */
 @media (width > 768px) {
   header {
     min-height: 650px;
   }
-  /**** NavBar ****/
+  /*; NavBar */
   nav {
     padding: 2rem 1rem;
     position: static;
@@ -356,12 +393,17 @@ nav {
   .nav_links #n4 {
     max-width: 150px;
   }
-  /**** Portfolio / Service ****/
+  /*; Portfolio / Service */
   .portfolio_grid,
   .service_grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  /**** Client****/
+  .service_card:nth-child(3){
+    grid-column: unset;
+    max-width: unset;
+    margin: unset;
+  }
+  /*; Client */
 
   .swiper-button-prev,
   .swiper-button-next {
@@ -371,9 +413,16 @@ nav {
   .client_card p{
     padding: 0 3.5rem;
   }
-  /**** Gallery****/
+  /*; Gallery */
   .gallery_grid{
     grid-template-columns: repeat(4, 1fr);
+  }
+  /*; Blog */
+  .blog_container{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .blog_content {
+    grid-column: 2/3;
   }
 }
 /*: Desktop */

@@ -113,13 +113,13 @@ const serviceArray = [
   },
   {
     id: 's2',
-    title: 'maternality sessions',
-    desc: 'Embrace the beauty and miracle of new life with our maternity and newborn photography sessions',
+    title: 'family sessions',
+    desc: 'Cherish the bond of family with our custom-designed playful moments and portrait sessions',
   },
   {
     id: 's3',
-    title: 'family sessions',
-    desc: 'Cherish the bond of family with our custom-designed playful moments and portrait sessions',
+    title: 'maternality sessions',
+    desc: 'Embrace the beauty and miracle of new life with our maternity and newborn photography sessions',
   },
 ]
 
@@ -266,3 +266,21 @@ ScrollReveal().reveal('.service_card', {
   delay: 1000,
   interval: 500,
 })
+//: Blog
+
+ScrollReveal().reveal('#blog h2', {
+  ...scrollRevealOption,
+})
+ScrollReveal().reveal('#blog h4', {
+  ...scrollRevealOption,
+  delay:400
+})
+ScrollReveal().reveal('#blog p', {
+  ...scrollRevealOption,
+  delay:800
+})
+ScrollReveal().reveal('#blog .blog_btn', {
+  ...scrollRevealOption,
+  delay:1200
+})
+
