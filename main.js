@@ -5,14 +5,8 @@ const menuBtnIcon = menuBtn.querySelector('i')
 const portfolioGrid = document.querySelector('.portfolio_grid')
 const serviceGrid = document.querySelector('.service_grid')
 const clientWrapper = document.querySelector('.swiper-wrapper')
-const galleryGrid = document.querySelector('.gallery_grid')
+const galleryList = document.getElementById('galleryList')
 const instagram = document.querySelector('.instagram_flex')
-
-const scrollRevealOption = {
-  discance: '50px',
-  duration: 1000,
-  origin: 'bottom',
-}
 
 //* Menu Toggle
 menuBtn.addEventListener('click', (e) => {
@@ -229,14 +223,12 @@ function displayGallery(gallery) {
   galleryImages = gallery
     .map(function (i) {
       return `
-    <ul>
     <li><img src="${i.img}" alt="${i.alt}"</li>
-    </ul>
     
     `
     })
     .join('')
-  galleryGrid.innerHTML = galleryImages
+  galleryList.innerHTML = galleryImages
 }
 displayGallery(galleryArray)
 
@@ -264,46 +256,55 @@ Array.from(instagram.children).forEach((item) => {
 
 //* ScrollReveal
 
+window.sr = new ScrollReveal()
+
+const scrollRevealOption = {
+  distance: '50px',
+  origin: 'bottom',
+  duration: 1000,
+}
+
+
 //: Header
-ScrollReveal().reveal('#about h2', {
+sr.reveal('#about h2', {
   ...scrollRevealOption,
 })
-ScrollReveal().reveal('#about p', {
+sr.reveal('#about p', {
   ...scrollRevealOption,
   delay: 300,
   interval: 300,
 })
-ScrollReveal().reveal('#about img', {
+sr.reveal('#about img', {
   ...scrollRevealOption,
   delay: 1000,
 })
 //: Service
-ScrollReveal().reveal('#service h2', {
+sr.reveal('#service h2', {
   ...scrollRevealOption,
 })
-ScrollReveal().reveal('.service_description', {
+sr.reveal('.service_description', {
   ...scrollRevealOption,
   delay: 500,
 })
-ScrollReveal().reveal('.service_card', {
+sr.reveal('.service_card', {
   duration: 1000,
-  delay: 1000,
-  interval: 500,
+  delay: 800,
+  interval: 300,
 })
 //: Blog
 
-ScrollReveal().reveal('#blog h2', {
+sr.reveal('#blog h2', {
   ...scrollRevealOption,
 })
-ScrollReveal().reveal('#blog h4', {
+sr.reveal('#blog h4', {
   ...scrollRevealOption,
   delay:400
 })
-ScrollReveal().reveal('#blog p', {
+sr.reveal('#blog p', {
   ...scrollRevealOption,
   delay:800
 })
-ScrollReveal().reveal('#blog .blog_btn', {
+sr.reveal('#blog .blog_btn', {
   ...scrollRevealOption,
   delay:1200
 })
