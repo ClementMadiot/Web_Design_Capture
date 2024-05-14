@@ -3,6 +3,7 @@ const navLinks = document.getElementById('navLinks')
 const menuBtnIcon = menuBtn.querySelector('i')
 const portfolioGrid = document.querySelector('.portfolio_grid')
 const serviceGrid = document.querySelector('.service_grid')
+const clientWrapper = document.querySelector('.swiper-wrapper')
 
 const scrollRevealOption = {
   discance: '50px',
@@ -135,6 +136,57 @@ function displayServices(service) {
   serviceGrid.innerHTML = displayServiceItems
 }
 displayServices(serviceArray)
+
+//* Display Client
+const clientArray = [
+  {
+    id: 'c1',
+    title: 'Sarah and Micheal',
+    desc: "Capturer exceeded all our expectations ! Their attention to detail and ability to capture the essence of our special day was truly remarkable> Every time we look at our wedding photos, we're transported back to those magical moments. Thanks you for preserving our memories so beautifully !",
+    img: "assets/client-1.jpg"
+  },
+  {
+    id: 'c2',
+    title: 'The Johsnon Family',
+    desc: "We couldn't be happier with our family portrait session with Capturer. They made us feel relaxed and comfortable throughout the entire shoot, resulting in natural and candid photos that perfectly reflect our family dynamic. Thece images will be cherished for years to come !",
+    img: "assets/client-2.jpg"
+  },
+  {
+    id: 'c3',
+    title: 'Emily and David',
+    desc: "Capturer's maternity and newborn sessions captured the most precious moments of our lives with such tenderness and care. |From the anticipation of pregnancy to the joy of welcoming our little one, every photo tells a story that we'll cherish forever. Thank you for creating beautiful memories for our familiy !",
+    img: "assets/client-3.jpg"
+  },
+]
+
+function displayClient(client) {
+  let displayClientItems = client
+    .map(function (i) {
+      return `
+      <div class="swiper-slide">
+      <div id='${i.id}' class="client_card">
+        <img src="${i.img}" alt="client">
+        <p>${i.desc}</p>
+        <h4>${i.title}</h4>
+      </div>
+    </div>
+    `
+    })
+    .join('')
+  clientWrapper.innerHTML = displayClientItems
+}
+displayClient(clientArray)
+
+const swiper = new Swiper('.swiper', {
+  loop:true,
+  pagination:{
+    el: '.swiper-pagination'
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+})
 
 //* ScrollReveal
 

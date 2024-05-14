@@ -5,7 +5,8 @@
   --text-light: rgb(82, 82, 82);
   --extra-light: rgb(163, 163, 163);
   --white: rgb(255, 255, 255);
-  --shadow-cl: rgba(0, 0, 0, 0.5);
+  --shadow-cd: rgba(0, 0, 0, 0.5);
+  --shadow-client-cd: 5px 5px 20px rgba(0, 0, 0, 0.2);
   --max-width: 1200px;
   --header-font: 'Merriweather', serif;
 }
@@ -201,33 +202,30 @@ nav {
 }
 /**** Services ****/
 #service {
-  background-image: linear-gradient(
-    rgba(0, 0, 0, 0.9),
-    rgba(0, 0, 0, 0.9)),
-    url(assets/service.jpg)
-    ;
-    background-position: center, center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url(assets/service.jpg);
+  background-position: center, center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-#service h2{
+#service h2 {
   color: var(--white);
 }
-#service p{
+#service p {
   max-width: 600px;
   margin-inline: auto;
   color: var(--extra-light);
   line-height: 1.75rem;
 }
-.service_grid{
+.service_grid {
   margin-top: 4rem;
   display: grid;
   gap: 2rem;
 }
-.service_card{
+.service_card {
   text-align: center;
 }
-.service_card h4{
+.service_card h4 {
   position: relative;
   isolation: isolate;
   margin-bottom: 1rem;
@@ -236,14 +234,61 @@ nav {
   font-weight: 500;
   color: var(--white);
 }
-.service_card h4::after{
+.service_card h4::after {
   position: absolute;
-  content: "~";
+  content: '~';
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   font-size: 2rem;
   line-height: 0;
+}
+
+/**** Client ****/
+
+#client {
+  padding-bottom: 2rem;
+}
+.swiper {
+  margin-top: 2rem;
+  padding-bottom: 3rem;
+  width: 100%;
+}
+.client_card {
+  max-width: 900px;
+  margin-inline: auto;
+  text-align: center;
+}
+.client_card img {
+  max-width: 120px;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  border-radius: 100%;
+  box-shadow: var(--shadow-client-cd);
+}
+.client_card p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  line-height: 1.75rem;
+}
+.client_card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+.swiper-pagination {
+  position: static !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+.swiper-pagination-bullet-active {
+  background: var(--text-dark) !important;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
 }
 
 /**** Responsive ****/
@@ -252,9 +297,8 @@ nav {
   .service_grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .service_grid h4{
+  .service_grid h4 {
     font-size: 1.5rem;
-
   }
 }
 /*: Ipad */
@@ -295,6 +339,16 @@ nav {
   .service_grid {
     grid-template-columns: repeat(3, 1fr);
   }
+  /**** Client****/
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: block !important;;
+    color: var(--text-dark) !important;
+  }
+  .client_card p{
+    padding: 0 3.5rem;
+  }
 }
 /*: Desktop */
 @media (width > 1024px) {
@@ -306,5 +360,8 @@ nav {
   }
   .service_grid h4 {
     font-size: 1.75rem;
+  }
+  .client_card p{
+    padding: unset;
   }
 }
