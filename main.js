@@ -1,10 +1,12 @@
 const menuBtn = document.getElementById('menuBtn')
 const navLinks = document.getElementById('navLinks')
 const menuBtnIcon = menuBtn.querySelector('i')
+// section 
 const portfolioGrid = document.querySelector('.portfolio_grid')
 const serviceGrid = document.querySelector('.service_grid')
 const clientWrapper = document.querySelector('.swiper-wrapper')
 const galleryGrid = document.querySelector('.gallery_grid')
+const instagram = document.querySelector('.instagram_flex')
 
 const scrollRevealOption = {
   discance: '50px',
@@ -237,6 +239,28 @@ function displayGallery(gallery) {
   galleryGrid.innerHTML = galleryImages
 }
 displayGallery(galleryArray)
+
+//* Display Instagram
+function displayInstagram(insta) {
+  instagramImages = insta
+    .map(function (i) {
+      return `
+  
+    <img src="${i.img}" alt="${i.alt}"/>
+
+    
+    `
+    })
+    .join('')
+  instagram.innerHTML = instagramImages
+}
+displayInstagram(galleryArray)
+
+Array.from(instagram.children).forEach((item) => {
+  const duplicateNode = item.cloneNode(true);
+  duplicateNode.setAttribute("aria-hidden", true);
+  instagram.appendChild(duplicateNode);
+});
 
 //* ScrollReveal
 
