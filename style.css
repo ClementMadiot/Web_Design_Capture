@@ -199,11 +199,62 @@ nav {
 .portfolio_card:hover .portfolio_content {
   opacity: 1 !important;
 }
+/**** Services ****/
+#service {
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.9)),
+    url(assets/service.jpg)
+    ;
+    background-position: center, center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#service h2{
+  color: var(--white);
+}
+#service p{
+  max-width: 600px;
+  margin-inline: auto;
+  color: var(--extra-light);
+  line-height: 1.75rem;
+}
+.service_grid{
+  margin-top: 4rem;
+  display: grid;
+  gap: 2rem;
+}
+.service_card{
+  text-align: center;
+}
+.service_card h4{
+  position: relative;
+  isolation: isolate;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--white);
+}
+.service_card h4::after{
+  position: absolute;
+  content: "~";
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  line-height: 0;
+}
 
 /**** Responsive ****/
-@media (width > 540px){
-  .portfolio_grid{
+@media (width > 540px) {
+  .portfolio_grid,
+  .service_grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .service_grid h4{
+    font-size: 1.5rem;
+
   }
 }
 /*: Ipad */
@@ -211,7 +262,7 @@ nav {
   header {
     min-height: 650px;
   }
-/**** NavBar ****/
+  /**** NavBar ****/
   nav {
     padding: 2rem 1rem;
     position: static;
@@ -239,17 +290,21 @@ nav {
   .nav_links #n4 {
     max-width: 150px;
   }
-/**** Portfolio ****/
-.portfolio_grid{
-  grid-template-columns: repeat(3,1fr);
-}
+  /**** Portfolio / Service ****/
+  .portfolio_grid,
+  .service_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 /*: Desktop */
 @media (width > 1024px) {
   header {
     min-height: 700px;
   }
-  .portfolio_grid{
+  .portfolio_grid {
     gap: 2rem;
+  }
+  .service_grid h4 {
+    font-size: 1.75rem;
   }
 }

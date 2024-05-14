@@ -2,11 +2,12 @@ const menuBtn = document.getElementById('menuBtn')
 const navLinks = document.getElementById('navLinks')
 const menuBtnIcon = menuBtn.querySelector('i')
 const portfolioGrid = document.querySelector('.portfolio_grid')
+const serviceGrid = document.querySelector('.service_grid')
 
 const scrollRevealOption = {
   discance: '50px',
-  origin: 'bottom',
   duration: 1000,
+  origin: 'bottom'
 }
 
 //* Menu Toggle
@@ -85,8 +86,9 @@ const portfolioArray = [
   },
 ]
 function displayPortfolio(portfolio) {
-  let portfolioArrayItems = portfolio.map(function (i) {
-    return `
+  let portfolioArrayItems = portfolio
+    .map(function (i) {
+      return `
     <div id='${i.id}' class="portfolio_card">
     <img src="${i.img}" alt="${i.alt}">
     <div class="portfolio_content">
@@ -94,13 +96,49 @@ function displayPortfolio(portfolio) {
     </div>
   </div>
     `
-  }).join('')
+    })
+    .join('')
   portfolioGrid.innerHTML = portfolioArrayItems
 }
 displayPortfolio(portfolioArray)
 
+//* Display Services
+const serviceArray = [
+  {
+    id: 's1',
+    title: 'portrait sessions',
+    desc: 'Our portrait sessions are designed to showcase your personality and style in stunning imagery.',
+  },
+  {
+    id: 's2',
+    title: 'maternality sessions',
+    desc: 'Embrace the beauty and miracle of new life with our maternity and newborn photography sessions',
+  },
+  {
+    id: 's3',
+    title: 'family sessions',
+    desc: 'Cherish the bond of family with our custom-designed playful moments and portrait sessions',
+  },
+]
+
+function displayServices(service) {
+  let displayServiceItems = service
+    .map(function (i) {
+      return `
+    <div id='${i.id}' class="service_card">
+    <h4>${i.title}</h4>
+    <p>${i.desc}</p>
+  </div>
+    `
+    })
+    .join('')
+  serviceGrid.innerHTML = displayServiceItems
+}
+displayServices(serviceArray)
+
 //* ScrollReveal
 
+//: Header
 ScrollReveal().reveal('#about h2', {
   ...scrollRevealOption,
 })
@@ -112,4 +150,17 @@ ScrollReveal().reveal('#about p', {
 ScrollReveal().reveal('#about img', {
   ...scrollRevealOption,
   delay: 1000,
+})
+//: Service
+ScrollReveal().reveal('#service h2', {
+  ...scrollRevealOption,
+})
+ScrollReveal().reveal('.service_description', {
+  ...scrollRevealOption,
+  delay: 500,
+})
+ScrollReveal().reveal('.service_card', {
+  duration:1000,
+  delay: 1000,
+  interval:500,
 })
