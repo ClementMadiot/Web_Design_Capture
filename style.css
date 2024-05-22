@@ -191,7 +191,7 @@ header ul a:hover {
   content: 'Portraits';
 }
 .portfolio_card:nth-child(2)::after {
-  content: 'Weedings';
+  content: 'Weeddings';
 }
 .portfolio_card:nth-child(3)::after {
   content: 'Fashions';

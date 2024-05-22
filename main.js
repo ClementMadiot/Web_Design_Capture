@@ -117,7 +117,7 @@ const serviceArray = [
   },
   {
     id: 's3',
-    title: 'maternality sessions',
+    title: 'maternity sessions',
     desc: 'Embrace the beauty and miracle of new life with our maternity and newborn photography sessions',
   },
 ]
@@ -142,19 +142,19 @@ const clientArray = [
   {
     id: 'c1',
     title: 'Sarah and Micheal',
-    desc: "Capturer exceeded all our expectations ! Their attention to detail and ability to capture the essence of our special day was truly remarkable> Every time we look at our wedding photos, we're transported back to those magical moments. Thanks you for preserving our memories so beautifully !",
+    desc: "Capturer exceeded all our expectations! Their attention to detail and ability to capture the essence of our special day was truly amazing! Every time we look at our wedding photos, we're transported back to those magical moments. Thanks you for preserving our memories so beautifully!",
     img: 'assets/client-1.jpg',
   },
   {
     id: 'c2',
     title: 'The Johsnon Family',
-    desc: "We couldn't be happier with our family portrait session with Capturer. They made us feel relaxed and comfortable throughout the entire shoot, resulting in natural and candid photos that perfectly reflect our family dynamic. Thece images will be cherished for years to come !",
+    desc: "We couldn't be happier with our family portrait session with Capturer. They made us feel relaxed and comfortable throughout the entire shoot, resulting in natural and candid photos that perfectly reflect our family dynamic. These images will be cherished for years to come!",
     img: 'assets/client-2.jpg',
   },
   {
     id: 'c3',
     title: 'Emily and David',
-    desc: "Capturer's maternity and newborn sessions captured the most precious moments of our lives with such tenderness and care. |From the anticipation of pregnancy to the joy of welcoming our little one, every photo tells a story that we'll cherish forever. Thank you for creating beautiful memories for our familiy !",
+    desc: "Capturer's maternity and newborn sessions captured the most precious moments of our lives with such tenderness and care. From the anticipation of pregnancy of the joy of welcoming our little one, every photo tells a story that we'll cherish forever. Thank you for creating beautiful memories for our family!",
     img: 'assets/client-3.jpg',
   },
 ]
