@@ -1,12 +1,14 @@
 const menuBtn = document.getElementById('menuBtn')
 const navLinks = document.getElementById('navLinks')
 const menuBtnIcon = menuBtn.querySelector('i')
-// section 
+// section
 const portfolioGrid = document.querySelector('.portfolio_grid')
 const serviceGrid = document.querySelector('.service_grid')
 const clientWrapper = document.querySelector('.swiper-wrapper')
 const galleryList = document.getElementById('galleryList')
 const instagram = document.querySelector('.instagram_flex')
+const footerSocial = document.querySelector('.footer_socials')
+const footerLinks = document.querySelector('.footer_links')
 
 //* Menu Toggle
 menuBtn.addEventListener('click', (e) => {
@@ -49,7 +51,7 @@ const navArray = [
   },
   {
     id: 'n7',
-    a: `<a href="#contact">contact us</a>`,
+    a: `<a href="#contact">contact</a>`,
   },
 ]
 
@@ -62,6 +64,7 @@ function displayNavBar(nav) {
     })
     .join('')
   navLinks.innerHTML = navArrayItems
+  footerLinks.innerHTML = navArrayItems
 }
 displayNavBar(navArray)
 
@@ -220,7 +223,7 @@ const galleryArray = [
   },
 ]
 function displayGallery(gallery) {
-  galleryImages = gallery
+  let galleryImages = gallery
     .map(function (i) {
       return `
     <li><img src="${i.img}" alt="${i.alt}"</li>
@@ -234,13 +237,10 @@ displayGallery(galleryArray)
 
 //* Display Instagram
 function displayInstagram(insta) {
-  instagramImages = insta
+  let instagramImages = insta
     .map(function (i) {
       return `
-  
     <img src="${i.img}" alt="${i.alt}"/>
-
-    
     `
     })
     .join('')
@@ -249,10 +249,45 @@ function displayInstagram(insta) {
 displayInstagram(galleryArray)
 
 Array.from(instagram.children).forEach((item) => {
-  const duplicateNode = item.cloneNode(true);
-  duplicateNode.setAttribute("aria-hidden", true);
-  instagram.appendChild(duplicateNode);
-});
+  const duplicateNode = item.cloneNode(true)
+  duplicateNode.setAttribute('aria-hidden', true)
+  instagram.appendChild(duplicateNode)
+})
+
+//* Display Social Footer
+const socialArray = [
+  {
+    id: 's1',
+    icon: `<i class="ri-facebook-fill"></i>
+    `,
+  },
+  {
+    id: 's2',
+    icon: `<i class="ri-instagram-line"></i>`,
+  },
+  {
+    id: 's3',
+    icon: `<i class="ri-twitter-x-line"></i>`,
+  },
+  {
+    id: 's4',
+    icon: `<i class="ri-youtube-fill"></i>`,
+  },
+  {
+    id: 's5',
+    icon: `<i class="ri-pinterest-line"></i>`,
+  },
+]
+
+function displaySocialFooter (footer){
+  let socialIcon = footer.map((i) => {
+    return `
+    <a id='${i.id}' href="#">${i.icon}</a>
+    `
+  }).join('')
+  footerSocial.innerHTML = socialIcon
+}
+displaySocialFooter(socialArray)
 
 //* ScrollReveal
 
@@ -263,7 +298,6 @@ const scrollRevealOption = {
   origin: 'bottom',
   duration: 1000,
 }
-
 
 //: Header
 sr.reveal('#about h2', {
@@ -298,14 +332,13 @@ sr.reveal('#blog h2', {
 })
 sr.reveal('#blog h4', {
   ...scrollRevealOption,
-  delay:400
+  delay: 400,
 })
 sr.reveal('#blog p', {
   ...scrollRevealOption,
-  delay:800
+  delay: 800,
 })
 sr.reveal('#blog .blog_btn', {
   ...scrollRevealOption,
-  delay:1200
+  delay: 1200,
 })
-
