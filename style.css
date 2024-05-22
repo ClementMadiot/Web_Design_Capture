@@ -50,7 +50,7 @@ ul,
 li {
   list-style: none;
 }
-a {
+a{
   text-decoration: none;
   font-weight: 500;
   transition: 0.3s;
@@ -148,7 +148,7 @@ header ul {
 header ul.open {
   transform: translateY(0);
 }
-header ul #n4 {
+header ul #n4, footer #n4 {
   display: none;
 }
 header ul a {
@@ -380,9 +380,6 @@ padding: 0 1rem 5rem 1rem;
 .footer_col{
   padding-inline: 2rem;
 }
-footer #n4{
-  display: none;
-}
 .footer_container img{
   max-width: 170px;
   margin-inline: auto;
@@ -416,7 +413,6 @@ footer #n4{
 }
 footer h4{
   margin-bottom: 1rem;
-  font-size: 1.2rem;
   font-weight: 600;
   color: var(--text-dark);
   text-align: center;
