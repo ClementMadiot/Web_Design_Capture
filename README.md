@@ -8,7 +8,7 @@ The web page is completely responsive.
 
 ## Library ScrollReveal
 
-I use the librairy ScrollReveal for all my smooth animations on the loading web pages
+I use the library ScrollReveal for all my smooth animations on the loading web pages
 
 ## Library Script JS
 At the section "TESTIOMONALS" I build stunning and responsive slide-based interfaces for showcasing three fake comments.
