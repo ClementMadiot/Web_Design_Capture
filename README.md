@@ -1,16 +1,34 @@
-# Web_Design_Capture
+<div align="center">
+ <img src="./assets/capture-min.png alt=" alt="Capture">
+  <h3 align="center">Web Design Capture</h3>
+</div>
 
-## Preview Web Site Capture
-https://web-design-capture.netlify.app/
+## <br /> 📋 <a name="table">Summary</a>
+
+- [Introduction](#introduction)
+- [Technology Used](#tech-stack)
+- [Launch App](#launch-app)
+
+## <br /> <a name="introduction">✨ Introduction</a>
 
 The Capture Web page is a company who proposes a range of professional photography services.
-The web page is completely responsive.
+I build responsive websites that adapt seamlessly to all devices (desktop, tablet, mobile) and utilize smooth animations to create an engaging and intuitive user experience.
 
-## Library ScrollReveal
+<<<<<<< HEAD
+## <br /> <a name="tech-stack">🛠 Technology Used</a>
 
-I use the library ScrollReveal for all my smooth animations on the loading web pages
+- **ScrollReveal** : adds animation effects to elements on a webpage as they scroll into view.
 
-## Library Script JS
-At the section "TESTIOMONALS" I build stunning and responsive slide-based interfaces for showcasing three fake comments.
-I use the fonctionality 'swiper-pagination' to swap with your finger between comments and the 'swiper-button' for tablet and desktop 
+- **Swipper JS** : creates touch-enabled sliders (carousels) for showcasing images, content, or products.
 
+## <br /> <a name="launch-app">🚀 Launch App</a>
+
+<br/>**Cloning the Repository**
+
+```bash
+git clone {git remote URL}
+```
+
+<br/>**installation**
+
+> After cloning the repository, with the extention `live server` from VScode , click on `Go live` to run live server
