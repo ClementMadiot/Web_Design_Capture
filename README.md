@@ -1,5 +1,5 @@
 <div align="center">
- <img src="./assets/capture-min.png alt=" alt="Capture">
+ <img src="./assets/capture-min.png" alt="Capture">
   <h3 align="center">Web Design Capture</h3>
 </div>
 
