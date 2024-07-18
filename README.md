@@ -1,5 +1,5 @@
 <div align="center">
- <img src="./assets/capture-min.png" alt="Capture">
+ <a href="https://web-design-capture.netlify.app/" target="_blanck"><img src="./assets/capture.png" alt="Capture"></a>
   <h3 align="center">Web Design Capture</h3>
 </div>
 
